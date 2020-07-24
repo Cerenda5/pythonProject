@@ -16,13 +16,25 @@
 	   <h2>Derniers ajouts</h2>
 	   {% for entry in last_added %}
 	   <div class="card">
-	   <p><a href="/view/{{ entry["uid"] }}">{{ entry["uid"] }}</a></p>
+	   <p><a href="/view/{{ entry["uid"] }}"> Id :{{ entry["uid"] }}</a></p>
 	   <p><pre>Code : <br>{{ entry["code"] }}</pre>
 	   <p><pre>Langage de programmation : {{ entry["lang"] }}</pre>
 	   </div>
 	   <hr/>
 	   {% endfor %}
 	   {% endif %}
+	   {% if data %}
+			<h2>Derniers ajouts</h2>
+
+			{% for row in data %}
+			<div class="card">
+				<p><a href="/view/{{ row[0] }}">Id :{{ row[0] }}</a></p>
+				<p><pre>Code :<br>{{ row[1] }}</pre></p>
+				<p><pre>Langage de programmation :{{ row[2] }}</pre></p>
+			</div>
+			<hr/>
+			{% endfor %}
+		{% endif %}
    </body>
 </html>
 {% endblock %}
