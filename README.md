@@ -1,5 +1,11 @@
 # Projet Python
 =================
+## Lancement du projet 
+Placer vous dans un venv actif :
+ * pip install -r requirements.txt
+ * export FLASK_ENV=development
+ * lancement partie 1 : python3 sharecode.py
+ * lancement partie 2 : python3 sharecodedb.py
 
 ## Partie 1 : Possibilité de choisir le langage de programmation
 
