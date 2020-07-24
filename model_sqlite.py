@@ -4,9 +4,6 @@ def createTables():
     conn = sqlite3.connect('shareCodeBdd.db')
     c = conn.cursor()
 
-    #c.execute("DROP TABLE code")
-    #c.execute("DROP TABLE edition")
-
     c.execute('''
         CREATE TABLE IF NOT EXISTS code (
             uid INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,7 +15,7 @@ def createTables():
     ''')
 
     c.execute('''
-        CREATE TABLE IF NOT EXISTS edition (
+        CREATE TABLE IF NOT EXISTS user (
             uid INTEGER PRIMARY KEY AUTOINCREMENT,
             ip INT,
             user_agent VARCHAR(255),
@@ -103,12 +100,12 @@ def updateCode(uid, code, lang):
 
     return result
 
-def createEdition(ip, user_agent):
+def createUser(ip, user_agent):
     conn = sqlite3.connect('shareCodeBdd.db')
     c = conn.cursor()
 
     c.execute('''
-        INSERT INTO edition
+        INSERT INTO user
         VALUES(?,?)
     ''', (ip, user_agent))
 
@@ -119,13 +116,13 @@ def createEdition(ip, user_agent):
 
     return uid
 
-def getEdition():
+def getUser():
     conn = sqlite3.connect('shareCodeBdd.db')
     c = conn.cursor()
 
     result = c.execute('''
         SELECT ip, user_agent, date
-        FROM edition
+        FROM user
         ORDER BY date DESC
     ''')
 

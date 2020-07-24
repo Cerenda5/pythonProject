@@ -9,8 +9,8 @@ from model_sqlite import createTables, \
                          getCode, \
                          getAllCode, \
                          updateCode, \
-                         createEdition, \
-                         getEdition
+                         createUser, \
+                         getUser
 
 app = Flask(__name__)
 createTables()
