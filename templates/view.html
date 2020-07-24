@@ -1,17 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
 <html>
    <head>
 	   <title>Code Share: Share your codes!</title>
    </head>
    <body>
 	   <h1>Code Share: Share your codes!</h1>
-	   <p><a href="/">Home</a>	
+	   <p><a class="btn btn-secondary" href="/">Home</a>	
 	   <form>
 		 <p align=left>URL: <input name='url' value="{{ url }}">
 	   </form>
 	   <p align=left>
-		   <pre>{{ code }}</pre>
+		   <pre>Code : <br>{{ code }}</pre>
+		   <pre>Langage de programmation : {{ lang }}</pre>
 	   </p>
-	   <a href="/edit/{{ uid }}">Edit</a></br>
-	   <a href="/create">Create New</a>
+	   <a class="btn btn-info" href="/edit/{{ uid }}">Edit</a></br>
+	   <a class="btn btn-info" href="/create">Create New</a>
    </body>
 </html>
+{% endblock %}
