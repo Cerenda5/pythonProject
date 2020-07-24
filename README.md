@@ -31,4 +31,5 @@ Placer vous dans un venv actif :
 
  * Ajout de fonctions pour la connexion à la table user
  * Ajout du template admin.html
- (Je n'ai pas eu le temps de terminer la partie 3, donc je n'ai pas merge ma branche avec le reste de mon code, la partie 3 se trouve sur la branch develop3 qui pars de la master)
+ 
+ **Je n'ai pas eu le temps de terminer la partie 3, donc je n'ai pas merge ma branche avec le reste de mon code, la partie 3 se trouve sur la branch develop3 qui pars de la master**
