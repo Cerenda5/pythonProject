@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <html>
    <head>
 	   <title>Code Share: Share your codes!</title>
@@ -8,15 +10,19 @@
 	   <img width=150 src='static/The_GNU_logo.png'/>
 	   <p align=center>
 	   <form method="GET" action="/create">
-		   <button name="create">Create</button>
+		   <button class="btn btn-info" name="create">Create</button>
 	   </form>
 	   {% if last_added %}
 	   <h2>Derniers ajouts</h2>
 	   {% for entry in last_added %}
-	   <p><a href="/view/{{ entry["uid"] }}">{{ entry["uid"] }}</a>
-	   <p><pre>{{ entry["code"] }}</pre>
+	   <div class="card">
+	   <p><a href="/view/{{ entry["uid"] }}">{{ entry["uid"] }}</a></p>
+	   <p><pre>Code : <br>{{ entry["code"] }}</pre>
+	   <p><pre>Langage de programmation : {{ entry["lang"] }}</pre>
+	   </div>
 	   <hr/>
 	   {% endfor %}
 	   {% endif %}
    </body>
 </html>
+{% endblock %}
